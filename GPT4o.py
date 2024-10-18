@@ -13,7 +13,7 @@ for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
 import os
 
-openai_api_key = "123"
+openai_api_key = os.environ["OPENAIKEY"]
 print(openai_api_key)  # Use your secret as needed
 if prompt := st.chat_input():
     client = OpenAI(api_key=openai_api_key)
